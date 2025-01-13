@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyTodoApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#2faca4</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="android:windowBackground">#f1ece4</item>
+    </style>
+
+    <style name="Theme.MyTodoApp" parent="Base.Theme.MyTodoApp" />
+</resources>

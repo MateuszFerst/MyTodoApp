@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:focusableInTouchMode="true" >
+
+    <!-- Wprowadź nazwę zadania -->
+    <EditText
+        android:id="@+id/task_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|start"
+        android:hint="Nazwa zadania"
+        android:inputType="textMultiLine"
+        android:lines="1"
+        android:maxLines="4"
+        android:minLines="1"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false" />
+
+    <!-- Wybór listy zadań -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Przypisz do listy:" />
+
+    <Spinner
+        android:id="@+id/task_category"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <!-- Przycisk "Powtarzaj zadanie" -->
+    <Button
+        android:id="@+id/repeat_task_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Powtarzaj zadanie"
+        android:layout_marginTop="16dp" />
+
+    <!-- Wybrane dni powtarzania -->
+    <TextView
+        android:id="@+id/repeat_days_selected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Wybrane dni: -"
+        android:textStyle="italic"
+        android:visibility="visible" />
+
+    <!-- Kontener na przyciski "Zapisz" i "Anuluj" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <!-- Przycisk "Anuluj" -->
+        <Button
+            android:id="@+id/cancel_task_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anuluj" />
+
+        <!-- Przycisk "Zapisz" -->
+        <Button
+            android:id="@+id/add_task_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zapisz"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FirstToDo</string>
+    <string-array name="categories">
+        <item>Wszystkie</item>
+    </string-array>
+</resources>
+

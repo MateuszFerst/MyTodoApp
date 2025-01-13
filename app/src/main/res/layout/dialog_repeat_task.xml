@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <CheckBox
+        android:id="@+id/check_pn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Poniedziałek" />
+    <CheckBox
+        android:id="@+id/check_wt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wtorek" />
+    <CheckBox
+        android:id="@+id/check_sr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Środa" />
+    <CheckBox
+        android:id="@+id/check_czw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Czwartek" />
+    <CheckBox
+        android:id="@+id/check_pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Piątek" />
+    <CheckBox
+        android:id="@+id/check_sb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobota" />
+    <CheckBox
+        android:id="@+id/check_nd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Niedziela" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anuluj" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Zapisz" />
+    </LinearLayout>
+</LinearLayout>
