@@ -405,7 +405,7 @@ class MainActivity : AppCompatActivity() {
             }
             scaleType = ImageView.ScaleType.CENTER_INSIDE
             setOnClickListener { showAddListDialog() }
-            setColorFilter(resources.getColor(android.R.color.white, null))
+            setColorFilter(Color.parseColor("#dcdcdc"))
             container.addView(this)
         }
     }
