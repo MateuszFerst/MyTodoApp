@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Paint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -36,6 +37,13 @@ class TaskAdapter(
                 } else {
                     paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
                 }
+            }
+
+            // Wyświetlanie ikony powtarzania
+            if (!task.repeatDays.isNullOrEmpty()) {
+                binding.iconAutorenew.visibility = View.VISIBLE
+            } else {
+                binding.iconAutorenew.visibility = View.GONE
             }
 
             // Obsługa zmiany statusu

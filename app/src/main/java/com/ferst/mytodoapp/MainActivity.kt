@@ -14,11 +14,10 @@ import kotlinx.coroutines.withContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.app.Dialog
-import android.content.ClipData
+import android.graphics.Color
+import android.graphics.Typeface
 import android.graphics.drawable.GradientDrawable
 import android.text.method.ScrollingMovementMethod
-import android.util.Log
-import android.view.DragEvent
 import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.*
@@ -26,7 +25,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.view.View
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.ferst.mytodoapp.data.TaskListDao
 import java.util.Collections
 
 class MainActivity : AppCompatActivity() {
@@ -380,9 +378,15 @@ class MainActivity : AppCompatActivity() {
                 listContainer.addView(this)
             }
 
-            // Aktualizacja treści widoku
             textView.text = taskCountText
-            underline.visibility = if (list.id == selectedListId) View.VISIBLE else View.INVISIBLE
+            if (list.id == selectedListId) {
+                underline.visibility = View.VISIBLE
+                textView.setTextColor(resources.getColor(android.R.color.white, null)) // Biała czcionka
+            } else {
+                underline.visibility = View.INVISIBLE
+                textView.setTextColor(Color.parseColor("#dcdcdc")) // Szara czcionka
+            }
+
         }
 
         if (currentChildCount > taskLists.size + 1) {
@@ -564,7 +568,7 @@ class MainActivity : AppCompatActivity() {
         taskNameEditText.setText(task.title)
 
         // Wyświetl wybrane dni powtarzania
-        repeatDaysTextView.text = "Wybrane dni: " + task.repeatDays?.split(",")?.joinToString(", ") ?: "Wybrane dni: -"
+        repeatDaysTextView.text = "Wybrane dni: " + (task.repeatDays?.split(",")?.joinToString(", ") ?: "-")
 
         // Obsługa przycisku "Powtarzaj zadanie"
         repeatButton.setOnClickListener {
