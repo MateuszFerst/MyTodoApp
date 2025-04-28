@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
     private val ALL_TASKS_ID = 1L // Stała identyfikująca "Wszystkie"
     private val taskListsCache = Collections.synchronizedList(mutableListOf<TaskList>()) // Przechowywanie list w pamięci
 
-    val MIGRATION_2_2 = object : Migration(2, 2) {
+    val MIGRATION_2_3 = object : Migration(2, 3) {
         override fun migrate(database: SupportSQLiteDatabase) {
-            database.execSQL("ALTER TABLE lists ADD COLUMN orderIndex INTEGER NOT NULL DEFAULT 0")
+            database.execSQL("ALTER TABLE lists ADD COLUMN taskCount INTEGER DEFAULT 0 NOT NULL")
         }
     }
 
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             AppDatabase::class.java,
             "tasks.db"
-        ).addMigrations(MIGRATION_2_2) // Dodanie migracji
+        ).addMigrations(MIGRATION_2_3) // Dodanie migracji
             .build()
 
         // Sprawdzenie powtarzających się zadań
